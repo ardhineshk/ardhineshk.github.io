@@ -1,27 +1,302 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dhinesh Kumar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Dhinesh Kumar Ramasamy, a Lead Cloud Data Engineer specializing in GCP, BigQuery, PySpark, Airflow, and data platform modernization.">
+  <meta name="author" content="Dhinesh Kumar Ramasamy">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Dhinesh Kumar Ramasamy | Lead Cloud Data Engineer">
+  <meta property="og:description" content="Designing scalable, reliable, and cost-efficient cloud data platforms on Google Cloud.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#07111f">
+  <title>Dhinesh Kumar Ramasamy | Lead Cloud Data Engineer</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --surface: #0c1a2d;
+      --surface-2: #10233c;
+      --text: #edf5ff;
+      --muted: #a9bad0;
+      --accent: #5eead4;
+      --accent-2: #60a5fa;
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 85% 10%, rgba(96, 165, 250, .13), transparent 28%),
+        radial-gradient(circle at 10% 25%, rgba(94, 234, 212, .10), transparent 25%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .container { width: min(calc(100% - 2rem), var(--max)); margin-inline: auto; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 17, 31, .78);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { font-weight: 800; letter-spacing: -.03em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.25rem; color: var(--muted); font-size: .95rem; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero { min-height: 76vh; display: grid; align-items: center; padding: 7rem 0 5rem; }
+    .eyebrow { color: var(--accent); font-weight: 750; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; }
+    h1 { max-width: 880px; margin: .7rem 0 1rem; font-size: clamp(2.8rem, 7vw, 6rem); line-height: 1.02; letter-spacing: -.055em; }
+    .gradient { background: linear-gradient(100deg, var(--accent), var(--accent-2)); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    .hero-copy { max-width: 760px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .75rem 1.1rem; border-radius: 12px; border: 1px solid var(--border); font-weight: 750; transition: .2s ease; }
+    .button.primary { color: #04131b; background: var(--accent); border-color: var(--accent); }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,.22); }
+
+    section { padding: 5rem 0; }
+    .section-title { margin: 0 0 .6rem; font-size: clamp(1.8rem, 4vw, 2.7rem); letter-spacing: -.035em; }
+    .section-intro { max-width: 720px; margin: 0 0 2.2rem; color: var(--muted); }
+
+    .about-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 1.1rem; }
+    .card { padding: 1.45rem; border: 1px solid var(--border); border-radius: 18px; background: linear-gradient(145deg, rgba(16,35,60,.95), rgba(12,26,45,.78)); box-shadow: var(--shadow); }
+    .card h3 { margin-top: 0; }
+    .stats { display: grid; gap: 1rem; }
+    .stat strong { display: block; color: var(--accent); font-size: 1.7rem; }
+    .stat span { color: var(--muted); }
+
+    .skills { display: flex; flex-wrap: wrap; gap: .7rem; }
+    .pill { padding: .55rem .8rem; color: #dbeafe; background: rgba(96,165,250,.09); border: 1px solid rgba(96,165,250,.22); border-radius: 999px; font-size: .92rem; }
+
+    .timeline { position: relative; display: grid; gap: 1rem; }
+    .role { display: grid; grid-template-columns: 180px 1fr; gap: 1.2rem; }
+    .role-period { color: var(--accent); font-weight: 750; }
+    .role h3 { margin: 0; }
+    .role-company { margin: .18rem 0 .8rem; color: var(--muted); }
+    .role ul { margin: 0; padding-left: 1.15rem; color: var(--muted); }
+    .role li + li { margin-top: .45rem; }
+
+    .focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .focus-icon { color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 1.15rem; }
+    .focus-card p { color: var(--muted); }
+
+    .contact { text-align: center; padding-bottom: 7rem; }
+    .contact .card { padding: clamp(2rem, 6vw, 4rem); }
+    footer { padding: 1.3rem 0 2rem; color: var(--muted); border-top: 1px solid var(--border); font-size: .9rem; }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .hero { min-height: auto; padding-top: 5.5rem; }
+      .about-grid, .focus-grid { grid-template-columns: 1fr; }
+      .role { grid-template-columns: 1fr; gap: .4rem; }
+      section { padding: 4rem 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Dhinesh Kumar Ramasamy</h1>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Go to homepage">DK<span>.</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#focus">Focus Areas</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <p>Lead Data Engineer | GCP | BigQuery | PySpark</p>
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Lead Cloud Data Engineer</div>
+        <h1>Dhinesh Kumar <span class="gradient">Ramasamy</span></h1>
+        <p class="hero-copy">
+          I design and modernize enterprise data platforms using Google Cloud, BigQuery,
+          PySpark, and Airflow, with a focus on scalability, reliability, data quality,
+          and cost-efficient engineering.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#experience">View experience</a>
+          <a class="button" href="#contact">Connect with me</a>
+        </div>
+      </div>
+    </section>
 
-    <h2>About Me</h2>
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About me</h2>
+        <p class="section-intro">A data engineering professional who combines hands-on delivery with architecture ownership and technical leadership.</p>
+        <div class="about-grid">
+          <article class="card">
+            <p>
+              I specialize in cloud-native data architecture, large-scale data processing,
+              data warehouse modernization, and production-grade orchestration. My work spans
+              translating business requirements into technical designs, building dependable
+              pipelines, improving platform performance, and guiding engineering teams through
+              complex delivery challenges.
+            </p>
+            <p>
+              I have worked across automotive, retail, and insurance domains and have collaborated
+              directly with business stakeholders in international and enterprise environments.
+            </p>
+          </article>
+          <aside class="card stats" aria-label="Professional highlights">
+            <div class="stat"><strong>11+ years</strong><span>IT and data engineering experience</span></div>
+            <div class="stat"><strong>GCP</strong><span>Cloud data platform specialization</span></div>
+            <div class="stat"><strong>Certified</strong><span>Google Cloud Digital Leader</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      Lead Data Engineer with 11+ years of experience in
-      Data Engineering, BigQuery, Dataproc, Airflow and Cloud Architecture.
-    </p>
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical toolkit</h2>
+        <p class="section-intro">Technologies and engineering practices used to build and operate modern data platforms.</p>
+        <div class="card skills">
+          <span class="pill">Google Cloud Platform</span>
+          <span class="pill">BigQuery</span>
+          <span class="pill">PySpark</span>
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Cloud Composer</span>
+          <span class="pill">Apache Airflow</span>
+          <span class="pill">Dataproc</span>
+          <span class="pill">Cloud Storage</span>
+          <span class="pill">Cloud Functions</span>
+          <span class="pill">Terraform</span>
+          <span class="pill">Data Warehousing</span>
+          <span class="pill">Data Modeling</span>
+          <span class="pill">ETL / ELT</span>
+          <span class="pill">Data Quality</span>
+          <span class="pill">Performance Tuning</span>
+          <span class="pill">DB2</span>
+          <span class="pill">Oracle</span>
+          <span class="pill">Hive</span>
+          <span class="pill">Looker</span>
+        </div>
+      </div>
+    </section>
 
-    <h2>Projects</h2>
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-intro">Selected responsibilities and outcomes, presented at a public-safe level without confidential project information.</p>
+        <div class="timeline">
+          <article class="card role">
+            <div class="role-period">2024 to present</div>
+            <div>
+              <h3>Lead Cloud Data Engineer</h3>
+              <div class="role-company">Automotive technology organization</div>
+              <ul>
+                <li>Lead the technical design and delivery of scalable cloud data solutions for enterprise analytics.</li>
+                <li>Build PySpark ingestion and transformation pipelines for high-volume datasets.</li>
+                <li>Improve performance and cost efficiency across BigQuery, Dataproc, and Cloud Storage workloads.</li>
+                <li>Orchestrate dependable cross-service workflows with Cloud Composer and Airflow.</li>
+                <li>Provide architecture guidance, production support, and technical mentorship to engineering teams.</li>
+              </ul>
+            </div>
+          </article>
 
-    <ul>
-      <li>Renault VDT Modernization</li>
-      <li>Looker Activate Link</li>
-      <li>Data Quality Framework</li>
-    </ul>
+          <article class="card role">
+            <div class="role-period">2021 to 2024</div>
+            <div>
+              <h3>Cloud Data Engineer</h3>
+              <div class="role-company">Automotive technology organization</div>
+              <ul>
+                <li>Developed end-to-end batch pipelines for large-scale ingestion and analytical processing on GCP.</li>
+                <li>Created cloud data models and curated datasets aligned with business reporting requirements.</li>
+                <li>Applied partitioning, clustering, SQL optimization, and storage practices to improve BigQuery efficiency.</li>
+              </ul>
+            </div>
+          </article>
 
+          <article class="card role">
+            <div class="role-period">2019 to 2020</div>
+            <div>
+              <h3>Data Warehouse Modernization Engineer</h3>
+              <div class="role-company">Automotive technology organization</div>
+              <ul>
+                <li>Supported the modernization of a legacy data warehouse into a cloud-based analytical platform.</li>
+                <li>Assessed data volumes, dependencies, ingestion frequency, and performance requirements.</li>
+                <li>Designed scheduled ingestion workflows and cloud-optimized data models.</li>
+                <li>Implemented operational validation and data quality checks for daily pipelines.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card role">
+            <div class="role-period">2015 to 2019</div>
+            <div>
+              <h3>Technology Analyst and Modernization Engineer</h3>
+              <div class="role-company">Global IT services organizations</div>
+              <ul>
+                <li>Worked on application modernization, database migration, production support, and incident resolution.</li>
+                <li>Performed reverse engineering, development, unit testing, implementation, and business acceptance support.</li>
+                <li>Built foundational experience with COBOL, JCL, DB2, IMS, Oracle, and enterprise batch systems.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus">
+      <div class="container">
+        <h2 class="section-title">Engineering focus</h2>
+        <p class="section-intro">The areas where I bring the strongest combination of architecture thinking and hands-on implementation.</p>
+        <div class="focus-grid">
+          <article class="card focus-card"><div class="focus-icon">01</div><h3>Cloud modernization</h3><p>Re-architecting legacy data platforms into scalable, maintainable cloud-native solutions.</p></article>
+          <article class="card focus-card"><div class="focus-icon">02</div><h3>Reliable pipelines</h3><p>Designing orchestrated ingestion and transformation workflows with validation, monitoring, and recovery in mind.</p></article>
+          <article class="card focus-card"><div class="focus-icon">03</div><h3>Performance and cost</h3><p>Improving compute, storage, and query efficiency through workload-aware engineering decisions.</p></article>
+          <article class="card focus-card"><div class="focus-icon">04</div><h3>Data quality</h3><p>Embedding automated controls and standardized validation practices into critical data workflows.</p></article>
+          <article class="card focus-card"><div class="focus-icon">05</div><h3>Architecture guidance</h3><p>Converting business needs into clear technical designs, solution patterns, and delivery roadmaps.</p></article>
+          <article class="card focus-card"><div class="focus-icon">06</div><h3>Technical leadership</h3><p>Supporting engineering teams through mentoring, reviews, troubleshooting, and pragmatic decision-making.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="card">
+          <div class="eyebrow">Let’s connect</div>
+          <h2 class="section-title">Interested in data platform engineering and architecture?</h2>
+          <p class="section-intro" style="margin-inline:auto;">Connect through the professional profile linked from this website or through GitHub. Personal contact details are intentionally not displayed publicly.</p>
+          <!-- Replace YOUR_GITHUB_USERNAME and YOUR_LINKEDIN_PROFILE before publishing. -->
+          <div class="actions" style="justify-content:center;">
+            <a class="button primary" href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+            <a class="button" href="https://www.linkedin.com/in/YOUR_LINKEDIN_PROFILE" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Dhinesh Kumar Ramasamy. Built for GitHub Pages.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
